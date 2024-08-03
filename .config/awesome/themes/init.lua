@@ -32,11 +32,11 @@ theme.fg_urgent = src.fg_1
 theme.fg_minimize = src.fg_1
 
 -- Borders --
-theme.useless_gap = dpi(5)
-theme.border_width = dpi(1)
-theme.border_normal = "#000000"
-theme.border_focus = "#535d6c"
-theme.border_marked = "91231c"
+theme.useless_gap = dpi(1)
+theme.border_width = dpi(3)
+theme.border_normal = src.accent_2
+theme.border_focus = src.accent_2
+theme.border_marked = src.accent_2
 
 -- Titlebars --
 theme.titlebar_bg_focus = src.bg_1
