@@ -54,11 +54,16 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 5px 0 5px;
     background-color: transparent;
-    color: #ffffff;
+    color: #808080;
 }
 
+#workspaces button.active {
+    color: #ffffff;
+    box-shadow: inset 0 -3px  #ffffff;
+
+}
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
 }
@@ -94,7 +99,7 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 10px;
+    padding: 0 5px;
     color: #ffffff;
 }
 
@@ -113,36 +118,17 @@ button:hover {
     margin-right: 0;
 }
 
-#clock {
-    background-color: #64727D;
-}
-
 #battery {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-#battery.charging, #battery.plugged {
     color: #ffffff;
-    background-color: #26A65B;
+    padding-right: 15px;
 }
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
+#battery.charging, #battery.plugged {
+    color: #26A65B;
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    color: #ff0000;
 }
 
 #power-profiles-daemon {
@@ -186,11 +172,11 @@ label:focus {
 }
 
 #network {
-    background-color: #2980b9;
+    color: #ffffff;
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    color: #ff0000;
 }
 
 #pulseaudio {
