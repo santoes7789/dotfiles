@@ -119,11 +119,15 @@ button:hover {
 }
 
 #battery {
+    padding: 0 5px 0 0;
     color: #ffffff;
-    padding-right: 15px;
 }
 #battery.charging, #battery.plugged {
-    color: #26A65B;
+    color: #ffff00;
+}
+
+#battery.warning {
+    color: #ffa500;
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
