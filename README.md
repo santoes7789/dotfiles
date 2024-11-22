@@ -30,7 +30,10 @@ Setup:
 
 
 ===Keybinds===
+
 Alt key to be mod
+
+
 Navigation:               mod + vim keys
 Workspace:                mod + num
 Move window to Workspace: mod + shift + num
