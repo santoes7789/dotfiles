@@ -16,7 +16,7 @@ default_border pixel
 default_floating_border none
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/wallpapers/Milkyway.png fill
+output * bg ~/wallpapers/Kokkini.png fill
 #
 # Example configuration:
 #
@@ -50,7 +50,7 @@ output * bg ~/wallpapers/Milkyway.png fill
    }
 # SwKap Alt and Windows keys
 input * {
-    xkb_options "ctrl:nocaps,altwin:swap_lalt_lwin"
+   xkb_options "ctrl:nocaps,altwin:swap_lalt_lwin"
 }
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
@@ -65,8 +65,7 @@ input * {
 
     # Kill focused window
     bindsym $mod+f kill
-
-    # Start your launcher
+    # Sart your launcher
     bindsym $mod+r exec $menu
 
     bindsym $mod+e exec thunar

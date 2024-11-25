@@ -120,6 +120,12 @@ require('lazy').setup({
       require('autoclose').setup()
     end,
   },
+  {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end,
+  },
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
