@@ -11,4 +11,5 @@ alias vi=nvim
 
 PS1='\w 〉'
 
+export QT_QPA_PLATFORMTHEME=qt5ct  # For Qt5
 export HISTSIZE=

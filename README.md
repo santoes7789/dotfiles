@@ -29,7 +29,7 @@ Setup:
  - Hyprland plugins
 
 
-===Keybinds===
+===WINDOW KEYBINDS===
 
 Alt key to be mod
 
@@ -37,17 +37,25 @@ Alt key to be mod
  - Workspace:                mod + num
  - Move window to Workspace: mod + shift + num
 
- - Change split:             mod + v
+ - Change split:             mod + o
+ - Splith:                   mod + u
+ - Splitv:                   mod + i
 
- - Resize window:            mod + r
+ - Resize window:            mod + q
  - Close window:             mod + f
- - launcher:                 mod + d
+ - launcher:                 mod + r
 
  - Toggle fullscreen:
- - Toggle tiling/floating:
+ - Toggle tiling/floating:   mod + shift + space
+
+ - Scratchpad/other thingy:  mod + -
 
 --Applications--
  - Terminal:                 mod + enter
  - File explorer:            mod + e
+
+
+===VIM Options===
+ - Ctrl + K for escape
 
 

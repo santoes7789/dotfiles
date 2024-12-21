@@ -10,36 +10,26 @@ exec swayosd-server
 exec waybar
 exec python3 ~/.config/sway/inactive-windows-transparency.py
 smart_gaps off 
-gaps inner 4
+gaps inner 8
 
-default_border pixel 
+
+default_border  pixel 3 
 default_floating_border none
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/wallpapers/Kokkini.png fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
 
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
+blur enable
+blur_passes 1
+blur_radius 7
 
-### Input configuration
-#
-# Example configuration:
+corner_radius 10 
+
+shadows enable
+
+
+default_dim_inactive 0.3
+
+
+
+output * bg ~/wallpapers/simple_mountain.jpg fill
 #
    input "type:touchpad" {
        dwt enabled
@@ -52,9 +42,6 @@ output * bg ~/wallpapers/Kokkini.png fill
 input * {
    xkb_options "ctrl:nocaps,altwin:swap_lalt_lwin"
 }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 
 ### Key bindings
 #
@@ -65,7 +52,7 @@ input * {
 
     # Kill focused window
     bindsym $mod+f kill
-    # Sart your launcher
+    # Srt your launcher
     bindsym $mod+r exec $menu
 
     bindsym $mod+e exec thunar
@@ -132,7 +119,7 @@ input * {
     bindsym $mod+Shift+7 move container to workspace number 7
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
+    bindsym $mod+Shift+0 move container to workspa number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 #
@@ -179,10 +166,6 @@ input * {
 # Resizing containers:
 #
 mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
     bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
     bindsym $up resize shrink height 10px
@@ -212,9 +195,5 @@ bindsym XF86MonBrightnessUp  exec swayosd-client --brightness +2
 bindsym XF86MonBrightnessDown exec swayosd-client --brightness -2
 # Sink volume toggle mute
 bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
 
 include /etc/sway/config.d/*
