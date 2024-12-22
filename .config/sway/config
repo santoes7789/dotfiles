@@ -3,7 +3,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term kitty
+set $term foot 
 set $menu wofi --show drun 
 
 exec swayosd-server
@@ -11,25 +11,25 @@ exec waybar
 exec python3 ~/.config/sway/inactive-windows-transparency.py
 smart_gaps off 
 gaps inner 8
+exec --no-startup-id fcitx5
 
 
 default_border  pixel 3 
 default_floating_border none
 
-blur enable
-blur_passes 1
-blur_radius 7
 
-corner_radius 10 
-
-shadows enable
-
-
-default_dim_inactive 0.3
-
+### Swayfx
+# blur enable
+# blur_passes 1
+# blur_radius 7
+#
+# corner_radius 10 
+#
+# default_dim_inactive 0.3
 
 
-output * bg ~/wallpapers/simple_mountain.jpg fill
+
+output * bg ~/wallpapers/Mountain.png fill
 #
    input "type:touchpad" {
        dwt enabled
@@ -119,7 +119,7 @@ input * {
     bindsym $mod+Shift+7 move container to workspace number 7
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspa number 10
+    bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 #
