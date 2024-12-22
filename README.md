@@ -53,6 +53,7 @@ Alt key to be mod
 --Applications--
  - Terminal:                 mod + enter
  - File explorer:            mod + e
+ - Browser (firefox)         mod + d
 
 
 ===VIM Options===

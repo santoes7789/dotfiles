@@ -5,6 +5,7 @@ set $up k
 set $right l
 set $term foot 
 set $menu wofi --show drun 
+set $browser firefox
 
 exec swayosd-server
 exec waybar
@@ -54,6 +55,8 @@ input * {
     bindsym $mod+f kill
     # Srt your launcher
     bindsym $mod+r exec $menu
+
+    bindsym $mod+d exec $browser
 
     bindsym $mod+e exec thunar
 
