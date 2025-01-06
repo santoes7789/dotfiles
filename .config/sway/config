@@ -10,7 +10,11 @@ set $browser firefox
 exec swayosd-server
 exec waybar
 exec python3 ~/.config/sway/inactive-windows-transparency.py
+
 exec --no-startup-id fcitx5
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+font pango: SourceCodePro Medium 8 
 
 # smart_gaps off 
 # gaps inner 8
@@ -191,8 +195,6 @@ bindsym $mod+q mode "resize"
 bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume 2
 # Volume lower with custom value
 bindsym XF86AudioLowerVolume exec swayosd-client --output-volume -2
-
-
 # Brightness raise with custom value('+' sign needed)
 bindsym XF86MonBrightnessUp  exec swayosd-client --brightness +2
 # Brightness lower with custom value('-' sign needed)
