@@ -12,18 +12,26 @@ alias vi=nvim
 
 function set_dynamic_prompt() {
   if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-    echo "\[\033[36m\]\W"  # Green for project dirs
+    local git_root=$(git rev-parse --show-toplevel)
+    local repo_name=$(basename "$git_root")
+    local  git_relative_path=$(realpath --relative-to="$git_root" "$PWD")
+
+    if [[ "$git_relative_path" == "." ]]; then
+        echo "\[\033[36m\]$repo_name"  # Green for project dirs
+    else
+        echo "\[\033[36m\]$repo_name/$git_relative_path"  # Green for project dirs
+    fi
   else
     echo "\[\033[34m\]\w"  # Blue for non-project dirs
   fi
 }
 
-PROMPT_COMMAND='PS1="\n $(set_dynamic_prompt)$(__git_ps1 " \033[33m(%s)")\n  \033[37m "'
-trap 'echo -n " "' DEBUG
-source .git-prompt.sh
-export QT_QPA_PLATFORMTHEME=qt6ct  # For Qt5
-export PATH="$HOME/.local/bin:$PATH"
-export HISTSIZE=
-# ~/.bashrc
+      PROMPT_COMMAND='PS1="\n $(set_dynamic_prompt)$(__git_ps1 " \033[33m(%s)")\n  \033[37m "'
+      trap 'echo -n " "' DEBUG
+      source .git-prompt.sh
+      export QT_QPA_PLATFORMTHEME=qt6ct  # For Qt5
+      export PATH="$HOME/.local/bin:$PATH"
+      export HISTSIZE=
+      # ~/.bashrc
 
 

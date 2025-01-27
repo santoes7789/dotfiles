@@ -3,7 +3,7 @@
     // "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     "width": "100%", // Waybar width
-    "spacing": 0, // Gaps between modules (4px)
+    "spacing": "4px", // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
         "sway/workspaces",
@@ -17,11 +17,8 @@
     "modules-right": [
         "mpd",
         "network",
-        "power-profiles-daemon",
-        "cpu",
-        "memory",
-        "temperature",
         "battery",
+        "power-profiles-daemon",
         "tray",
     ],
     // Modules configuration
@@ -128,11 +125,12 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format": "{icon}",
+        "format-full": "{icon}",
+        "format-charging": "{icon}",
+        "format-plugged": "{iscon}",
+        "format-alt": "{capacity}% {icon}",
+        "tooltip-format": "{capacity}%",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -153,11 +151,11 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "",
         "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip-format": "{essid} ({signalStrength}%)",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
+        "format-disconnected": "⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
@@ -177,7 +175,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pwvucontrol"
     },
     "custom/media": {
         "format": "{icon} {}",

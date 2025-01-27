@@ -9,8 +9,8 @@ set $browser firefox
 
 exec swayosd-server
 exec waybar
-exec python3 ~/.config/sway/inactive-windows-transparency.py
 
+exec python3 ~/.config/sway/inactive-windows-transparency.py
 exec --no-startup-id fcitx5
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
@@ -20,7 +20,7 @@ font pango: SourceCodePro Medium 8
 # gaps inner 8
 
 
-# default_border  pixel 2 
+# default_border csd 2 
 # default_floating_border none
 
 
@@ -35,7 +35,7 @@ font pango: SourceCodePro Medium 8
 
 
 
-output * bg ~/wallpapers/Mountain.png fill
+output * bg ~/wallpapers/simple_mountain.jpg fill
 #
    input "type:touchpad" {
        dwt enabled
