@@ -111,8 +111,8 @@
         },
         "format": "{capacity}% {icon}",
         "format-full": "{icon}",
-        "format-charging": "{icon}",
-        "format-plugged": "{iscon}",
+        "format-charging": "{capacity}% {icon}",
+        "format-plugged": "{icon}",
         "format-alt": "{icon}",
         "tooltip-format": "{capacity}%",
         // "format-good": "", // An empty format will hide the module
