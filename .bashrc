@@ -17,21 +17,24 @@ function set_dynamic_prompt() {
     local  git_relative_path=$(realpath --relative-to="$git_root" "$PWD")
 
     if [[ "$git_relative_path" == "." ]]; then
-        echo "\[\033[36m\]$repo_name"  # Green for project dirs
+        echo "\[\e[36m\]$repo_name"  # Green for project dirs
     else
-        echo "\[\033[36m\]$repo_name/$git_relative_path"  # Green for project dirs
+        echo "\[\e[36m\]$repo_name/$git_relative_path"  # Green for project dirs
     fi
   else
-    echo "\[\033[34m\]\w"  # Blue for non-project dirs
+    echo "\[\e[34m\]\w"  # Blue for non-project dirs
   fi
 }
 
-      PROMPT_COMMAND='PS1="\n $(set_dynamic_prompt)$(__git_ps1 " \033[33m(%s)")\n  \033[37m "'
-      trap 'echo -n " "' DEBUG
-      source .git-prompt.sh
-      export QT_QPA_PLATFORMTHEME=qt6ct  # For Qt5
-      export PATH="$HOME/.local/bin:$PATH"
-      export HISTSIZE=
-      # ~/.bashrc
+PROMPT_COMMAND='PS1="\n $(set_dynamic_prompt)$(__git_ps1 " \[\e[33m(%s)")\n  \[\e[0m\] "'
+# PS1="\n\e[0m\] "
+# PROMPT_COMMAND='PS1="\n hello  "'
+# PROMPT_COMMAND='\[\033[0;31m\]\u@\h:\w\$ \[\033[0m\]'
+# PROMPT_COMMAND='PS1="\[\e[1;32m\]\u@\h:\w\$ \[\e[0m\]"'
+# PROMPT_COMMAND='PS1="\n $(set_dynamic_prompt)$(__git_ps1 " \033[33m(%s)")\n   "'
+source .git-prompt.sh
+export PATH="$HOME/.local/bin:$PATH"
+export HISTSIZE=
+# ~/.bashrc
 
 

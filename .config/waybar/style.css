@@ -47,6 +47,15 @@
   padding-right: 14px;
   margin-right: 8px;
 }
+
+#battery.warning {
+  color: #f4df23; /* Yellow for warning */
+}
+
+#battery.critical {
+  color: #f63117; /* Red for critical */
+}
+
 #window {
   color: #929db1;
 }
