@@ -1,123 +1,153 @@
 {
-  "layer": "top",
-    "position": "top",
-    "margin-bottom": 0,
-    "modules-left": [
-      "clock",
-      "hyprland/workspaces",
-      "custom/updates",
-      "tray",
-      ],
-    "modules-center": [
-      "hyprland/window",
-      ],
-    "modules-right": [
-      "pulseaudio",
-			"battery",
-    ],
-    "tray": {
-      "icon-size": 24,
-      "spacing": 10
+	"layer": "top",
+		"position": "top",
+		"margin-right": 10,
+		"margin-left": 10,
+		"margin-bottom": 0,
+		"margin-top": 10,
+		"modules-left": [ "clock", "custom/updates", "group/expand" ],
+		"modules-center": [ "hyprland/workspaces", ],
+		"modules-right": [ "network", "battery", ],
+		"tray": {
+			"icon-size": 24,
+			"spacing": 10
+		},                
+		"custom/expand": {
+			"format": "",
+			"tooltip": false
+		},
+		"custom/endpoint":{
+				"format": "|",
+				"tooltip": false
+		},
+"group/expand": {
+    "orientation": "horizontal",
+    "drawer": {
+        "transition-duration": 600,
+        "transition-left-to-right": false,
+        "click-to-reveal": true
     },
-    "hyprland/window": {
-      "format": "{}",
-      "rewrite": {
-          "(\\d\\. )?(.*) - Chromium": "<span color=\"#4285F4\"></span>  $2 ",
-          "nvim (.*)": "<span color=\"#57A143\"></span>  $1",
-          "nvim": "<span color=\"#57A143\">  Neovim</span> ",
-          "ranger(.*)": "<span color=\"#ffffff\"></span>  $1",
-          "kitty (.*)": "<span color=\"#ffffff\"></span>  $1",
-          "Search(.*)": "<span color=\"#a855f7\"></span>  Search$1",
-      },
-      "separate-outputs": false
-    },
-    "hyprland/submap": {
-      "format": "✌️ {}",
-      "max-length": 8,
-      "tooltip": true
-    },
-    "hyprland/workspaces": {
-      "format": "{icon}",
-      "format-icons": {
-        "1": "󰲠",
-        "2": "󰲢",
-        "3": "󰲤",
-        "4": "󰲦",
-        "5": "󰲨",
-        "6": "󰲪",
-        "7": "󰲬",
-        "8": "󰲮",
-        "9": "󰲰",
-        "10": "󰿬",
-        "-99": "",
-        "active": "",
-        "default": ""
-      }
-    },
-    "network": {
-      "interface": "enp34s0",
-      "tooltip-format-ethernet": "{ifname} ",
-      "interval": 2,
-      "format": " {bandwidthDownBits}  {bandwidthUpBits}",
-    },
-    "temperature": {
-      "format": "{icon} {temperatureC}°C",
-      "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-      "critical-threshold": 80,
-      "format-icons": ["", "", ""]
-    },
-    "memory": {
-      "format": " {}%",
-      "tooltip": "false"
-    },
-    "cpu": {
-      "format": " {usage}%",
-      "tooltip": "false"
-    },
-    "custom/updates": {
-      "format": "<span color=\"#61afef\"></span> {}",
-      "tooltip": false,
-      "interval": 3600,
-      "exec": "exec $HOME/.config/waybar/checkupdate.sh"
-    },
-    "pulseaudio": {
-      "format": "{volume}% {icon}",
-      "format-bluetooth": "{volume}% {icon}",
-      "format-muted": "",
-      "format-icons": {
-          "headphone": "",
-          "hands-free": "",
-          "headset": "",
-          "phone": "",
-          "portable": "",
-          "car": "",
-          "default": ["", ""]
-      },
-      "scroll-step": 1,
-      "on-click": "pavucontrol"
-    },
-    "clock": {
-      //"format": "<span color=\"#56b6c2\"></span> {:%H:%M}",
-      "format": "{:%H:%M}",
-      "interval": 60,
-      "tooltip": true,
-      "tooltip-format": "{:%d %B %H:%M}"
-    },
-    "battery": {
-        "states": {
-            "good": 32,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-full": "{icon}",
-        "format-charging": "{capacity}% {icon}",
-        "format-plugged": "{icon}",
-        "format-alt": "{icon}",
-        "tooltip-format": "{capacity}%",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
+    "modules": ["custom/expand", "custom/endpoint","tray",]
+},
+		"hyprland/window": {
+			"format": "{}",
+			"rewrite": {
+				"(\\d\\. )?(.*) - Chromium": "<span color=\"#4285F4\"></span>  $2 ",
+				"nvim (.*)": "<span color=\"#57A143\"></span>  $1",
+				"nvim": "<span color=\"#57A143\">  Neovim</span> ",
+				"ranger(.*)": "<span color=\"#ffffff\"></span>  $1",
+				"kitty (.*)": "<span color=\"#ffffff\"></span>  $1",
+				"Search(.*)": "<span color=\"#a855f7\"></span>  Search$1",
+			},
+			"separate-outputs": false
+		},
+		"hyprland/submap": {
+			"format": "✌️ {}",
+			"max-length": 8,
+			"tooltip": true
+		},
+		"hyprland/workspaces": {
+			"format": "{icon}",
+			"format-icons": {
+				"1": "󰲠",
+				"2": "󰲢",
+				"3": "󰲤",
+				"4": "󰲦",
+				"5": "󰲨",
+				"6": "󰲪",
+				"7": "󰲬",
+				"8": "󰲮",
+				"9": "󰲰",
+				"10": "󰿬",
+				"-99": "",
+				"active": "",
+				"default": ""
+			}
+		},
+		"network": {
+			"format-wifi": "",
+			"format-ethernet":"",
+			"format-disconnected": "",
+			"tooltip-format-disconnected": "Error",
+			"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+			"tooltip-format-ethernet": "{ifname} 🖧 ",
+			"on-click": "kitty nmtui"
+		},
+
+		"bluetooth": {
+			"format-on": "󰂯",
+			"format-off": "BT-off",
+			"format-disabled": "󰂲",
+			"format-connected-battery": "{device_battery_percentage}% 󰂯",
+			"format-alt": "{device_alias} 󰂯",
+			"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+			"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+			"tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+			"tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
+			"on-click-right": "blueman-manager",
+		}, 
+		"temperature": {
+			"format": "{icon} {temperatureC}°C",
+			"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+			"critical-threshold": 80,
+			"format-icons": ["", "", ""]
+		},
+		"memory": {
+			"format": " {}%",
+			"tooltip": "false"
+		},
+		"cpu": {
+			"format": " {usage}%",
+			"tooltip": "false"
+		},
+		"custom/updates": {
+			"format": "<span color=\"#61afef\"></span> {}",
+			"tooltip": false,
+			"interval": 3600,
+			"exec": "exec $HOME/.config/waybar/checkupdate.sh"
+		},
+		"pulseaudio": {
+			"format": "{volume}% {icon}",
+			"format-bluetooth": "{volume}% {icon}",
+			"format-muted": "",
+			"format-icons": {
+				"headphone": "",
+				"hands-free": "",
+				"headset": "",
+				"phone": "",
+				"portable": "",
+				"car": "",
+				"default": ["", ""]
+			},
+			"scroll-step": 1,
+			"on-click": "pavucontrol"
+		},
+		"clock": {
+			//"format": "<span color=\"#56b6c2\"></span> {:%H:%M}",
+			"format": "{:%H:%M}",
+			"interval": 60,
+			"tooltip": true,
+			"tooltip-format": "{:%d %B %H:%M}"
+		},
+		"battery": {
+			"interval":30,
+			"states": {
+				"good": 95,
+				"warning": 30,
+				"critical": 20
+			},
+			"format": "{capacity}% {icon}",
+			"format-charging": "{capacity}% 󰂄",
+			"format-plugged": "{capacity}% 󰂄 ",
+			"format-alt": "{time} {icon}",
+			"format-icons": [
+				"󰁻",
+			"󰁼",
+			"󰁾",
+			"󰂀",
+			"󰂂",
+			"󰁹"
+			],
+		},
 }
 

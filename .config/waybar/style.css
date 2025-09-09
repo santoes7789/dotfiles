@@ -1,25 +1,28 @@
 * {
-  border: none;
-  border-radius: 0;
-  min-height: 0;
-  margin: 0;
-  padding: 0;
+	border: none;
+	border-radius: 0;
+	min-height: 0;
+	margin: 0;
+	padding: 0;
 }
+
 #waybar {
-  background: #1e222a;
-  color: #eeeeef;
-  font-size: 14px;
-  font-family: "Hack Nerd Font";
+	background-color: alpha(#ffffff, 0.07);
+	color: #eeeeef;
+	font-size: 14px;
+	font-family: "Hack Nerd Font";
+	border-radius: 30px;
 }
 
 #workspaces button {
-  padding: 0 5px;
-  color: #eeeeef;
+	padding: 0 5px;
+	color: #eeeeef;
 }
+
 /* Fix: active workspace doesn't show up */
 /* #workspaces button.focused { */
 #workspaces button.active {
-  color: #ffffff;
+	color: #ffffff;
 }
 
 #custom-powermenu,
@@ -31,79 +34,88 @@
 #window,
 #pulseaudio,
 #custom-updates,
+#bluetooth,
+#group-expand,
+#custom-expand,
+#tray,
+#custom-endpoint,
 #battery,
 #network {
-  padding: 4px 8px;
-  background-color: #303643;
-  border-radius: 30px;
-  margin: 6px 4px;
+	padding: 4px 8px;
+	border-radius: 30px;
+	margin: 6px 4px;
 }
 
 #workspaces {
-  padding-left: 4px;
+	padding-left: 4px;
 }
 
+
+
 #battery {
-  padding-right: 14px;
-  margin-right: 8px;
+	padding-right: 14px;
+	margin-right: 8px;
 }
 
 #battery.warning {
-  color: #f4df23; /* Yellow for warning */
+	color: #f4df23;
+	/* Yellow for warning */
 }
 
 #battery.critical {
-  color: #f63117; /* Red for critical */
+	color: #f63117;
+	/* Red for critical */
 }
 
 #window {
-  color: #929db1;
+	color: #929db1;
 }
 
 #tray {
-  margin-left: 4px;
+	margin-left: 4px;
 }
 
 #custom-updates {
-  color: #1788e4;
+	color: #1788e4;
 }
 
 #custom-powermenu {
-  color: #e06c75;
-  padding-right: 11px;
-  margin-right: 8px;
+	color: #e06c75;
+	padding-right: 11px;
+	margin-right: 8px;
 }
 
 #scratchpad {
-  color: #cffafe;
-  padding-right: 4px;
-  padding-left: 4px;
+	color: #cffafe;
+	padding-right: 4px;
+	padding-left: 4px;
 }
 
 #pulseaudio {
-  color: #0fb9b1;
-  padding-right: 14px;
+	color: #0fb9b1;
+	padding-right: 14px;
 }
 
 #cpu {
-  color: #61afef;
+	color: #61afef;
 }
 
 #temperature {
-  color: #98c379;
+	color: #98c379;
 }
 
 #memory {
-  color: #e5c07b;
+	color: #e5c07b;
 }
 
 #network {
-  color: #c678dd;
+	padding-right: 15px;
+	color: #c678dd;
 }
 
 #clock {
-  color: #fff;
-  margin-left: 8px;
-  /* opacity: 0.7; */
-  /* font-size: 18px; */
+	color: #fff;
+	margin-left: 8px;
+	/* opacity: 0.7; */
+	/* font-size: 18px; */
 }

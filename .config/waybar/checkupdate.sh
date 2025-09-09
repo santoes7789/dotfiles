@@ -8,7 +8,7 @@ if ! [[ $UPDATES =~ $re ]] ; then
 fi
 
 if (( $UPDATES > 0 ));then
-  echo "${UPDATES} updates available"; exit 0
+  echo "${UPDATES}"; exit 0
 else
-  echo "System is up to date"; exit 0
+  echo ""; exit 0
 fi

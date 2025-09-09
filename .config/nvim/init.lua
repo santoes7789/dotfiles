@@ -1,5 +1,8 @@
 -- Set <space> as the leader key
 -- See `:help mapleader`
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
@@ -114,18 +117,28 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   {
+    'nvim-tree/nvim-tree.lua',
+    version = '*',
+    lazy = false,
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
+    config = function()
+      require('nvim-tree').setup {}
+    end,
+  },
+  {
     'windwp/nvim-ts-autotag',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = function()
       require('nvim-ts-autotag').setup()
     end,
   },
-  -- {
-  --   'xiyaowong/transparent.nvim',
-  --   lazy = false,
-  -- },
+  {
+    'xiyaowong/transparent.nvim',
+    lazy = false,
+  },
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   {
     'm4xshen/autoclose.nvim',
     config = function()
@@ -364,7 +377,19 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
-        --
+        html = {
+          settings = {
+            html = {
+              format = {
+                enable = true,
+                indentInnerHtml = true, -- <--- This!
+                indentSize = 2,
+                tabSize = 2,
+                wrapLineLength = 120,
+              },
+            },
+          },
+        },
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -535,7 +560,6 @@ require('lazy').setup({
     config = function()
       require('onedark').setup {
         style = 'darker',
-        transparent = true,
       }
     end,
   },
@@ -613,7 +637,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --

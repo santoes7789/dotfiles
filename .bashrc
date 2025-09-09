@@ -9,6 +9,8 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias zed=zeditor
 alias vi=nvim
+alias ven='source venv/bin/activate'
+alias curr='cd ~/projects/sekolah/cube-timer/'
 
 function set_dynamic_prompt() {
   if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
@@ -26,7 +28,8 @@ function set_dynamic_prompt() {
   fi
 }
 
-PROMPT_COMMAND='PS1="\n $(set_dynamic_prompt)$(__git_ps1 " \[\e[33m(%s)")\n  \[\e[0m\] "'
+# PROMPT_COMMAND='PS1="\n $(set_dynamic_prompt)$(__git_ps1 " \[\e[33m(%s)")\n  \[\e[0m\] "'
+PROMPT_COMMAND='PS1="\n $(if [[ -n "$VIRTUAL_ENV" ]]; then echo "\[\e[32m($(basename "$VIRTUAL_ENV")) "; fi)$(set_dynamic_prompt)$(__git_ps1 " \[\e[33m(%s)")\n  \[\e[0m\] "'
 # PS1="\n\e[0m\] "
 # PROMPT_COMMAND='PS1="\n hello  "'
 # PROMPT_COMMAND='\[\033[0;31m\]\u@\h:\w\$ \[\033[0m\]'
