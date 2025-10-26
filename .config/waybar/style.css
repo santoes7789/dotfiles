@@ -41,7 +41,7 @@
 #custom-endpoint,
 #battery,
 #network {
-	padding: 4px 8px;
+	padding: 0px 8px;
 	border-radius: 30px;
 	margin: 6px 4px;
 }
@@ -59,11 +59,13 @@
 
 #battery.warning {
 	color: #f4df23;
+	background-color: alpha(#ffffff, 0);
 	/* Yellow for warning */
 }
 
 #battery.critical {
 	color: #f63117;
+	background-color: alpha(#ffffff, 0);
 	/* Red for critical */
 }
 
