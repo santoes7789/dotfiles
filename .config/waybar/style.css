@@ -7,11 +7,10 @@
 }
 
 #waybar {
-	background-color: alpha(#ffffff, 0.07);
+	background-color: alpha(#121211, 0.6);
 	color: #eeeeef;
 	font-size: 14px;
-	font-family: "Hack Nerd Font";
-	border-radius: 30px;
+	font-family: "Hack Nerd font";
 }
 
 #workspaces button {
@@ -43,7 +42,7 @@
 #network {
 	padding: 0px 8px;
 	border-radius: 30px;
-	margin: 6px 4px;
+	margin: 3px 4px;
 }
 
 #workspaces {
@@ -112,7 +111,7 @@
 
 #network {
 	padding-right: 15px;
-	color: #c678dd;
+	color: #1788e4;
 }
 
 #clock {
