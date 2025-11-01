@@ -11,6 +11,7 @@
 	color: #eeeeef;
 	font-size: 16px;
 	font-family: "Hack Nerd Font";
+  border-bottom: 2px solid alpha(#595959, 0.67);
 }
 
 #workspaces button {

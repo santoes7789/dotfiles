@@ -1,0 +1,13 @@
+anchor=top-right
+
+width=300
+
+margin=10
+
+default-timeout=8000
+
+font=FiraCode Nerd Font:Monospace 10
+background-color=#1788e411
+padding=15
+border-radius=10
+
